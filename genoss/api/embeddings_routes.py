@@ -18,5 +18,4 @@ async def post_embeddings(
     else:
         raise NotImplementedError("Model can not be anything else than gpt4all.")
 
-    response = gpt.generate_embedding(input)
-    return response
+    return gpt.generate_embedding(input)

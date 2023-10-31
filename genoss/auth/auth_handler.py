@@ -16,5 +16,4 @@ class AuthHandler:
         if len(components) != 2 or components[0].lower() != "bearer":
             raise HTTPException(status_code=403, detail="Invalid authorization header")
 
-        api_key = components[1]
-        return api_key
+        return components[1]

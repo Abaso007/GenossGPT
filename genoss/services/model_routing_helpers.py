@@ -113,8 +113,7 @@ class StandardModelRoute(AbstractRoute, Generic[ModelT], BaseModel):
             name for name, field in model_fields.items() if field.required
         }
 
-        non_existing_fields = available_params_at_handle - model_fields.keys()
-        if non_existing_fields:
+        if non_existing_fields := available_params_at_handle - model_fields.keys():
             raise ValueError(
                 f"Route variables {non_existing_fields} do not exist in model: {model_class}."
             )
